@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+.footer{
+border: 1px solid #fff;
+display: flex;
+flex-direction: row;
+justify-content: right;
+
+
+}
+
+.categorias{display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 25px 0;
+}
+
+.link{color: #fff;
+text-decoration: none;
+list-style: none;
+font-family: "Rajdhani", sans-serif;
+margin: 5px 0px;
+font-size: 1.5em;
+cursor: pointer;}
+
+.link:hover{font-size: 1.55em;}
+
+
+.contacto{
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+justify-content: center;
+align-items: center;
+text-align: center;}
+
+.contacto img{width: 30px;
+height: 30px;
+margin: 15px;}
+
+.contacto img:hover{height: 33px;}
+
+.info{margin: 40px;
+width: 50%;
+}
+
+.info img{width: 150px;}
+
+.info h3{color: #fff;
+    font-family: "Rajdhani", sans-serif;
+font-weight: 400;
+font-family: 1.7em;
+width: 50%;}
+

@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+.product{
+width: 590px;
+height: 500px;
+list-style: none;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 15px 0px;
+
+}
+
+
+
+.product-name{
+text-decoration: none;
+color: #ffff;
+font-family: "Rajdhani", sans-serif;
+font-size: 1.9em;
+margin:15px;
+}
+
+.product-name:hover{
+    color: #ffff;
+font-family: "Rajdhani", sans-serif;
+font-size: 2em; 
+font-weight: 500;
+}
+
+.container{
+margin:  auto;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around; 
+align-items: center;
+text-align: center;
+margin-bottom: 100px;
+}
+
+.homepage-products{
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+
+.homepage-products h1{font-family: "Rajdhani", sans-serif;
+color: #ffff;
+font-weight: 400;
+font-size: 3.8em;
+}
+
+body{    background-color: #1C1C1E;}
+
+
+.product img{width: 340px;}
+
+.banner-main{width: 100%;}
+
+.banner-container {
+    position: relative;
+
+  }
+
+.container-banner{border: 2px solid red;
+width: 90%;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+
+
+}
+.content-overlay {
+    position: absolute;
+    top: 50%;
+   right: 10%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+
+
+  }
+
+  .content-container {
+    text-align: right;
+    color: white;
+
+  }
+
+.banner-container h1{font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+    font-size: 5.5em;
+
+    margin-bottom: 10px;
+}
+
+.banner-container h2{font-family: "Rajdhani", sans-serif;
+        font-weight: 400;
+        font-size: 1.5em;
+
+        margin-bottom: 10px;}
+
+.banner-container p{font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+
+    width: 50%;
+    margin-left: auto;
+    margin-bottom: 10px;
+
+
+
+}
+
+
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+  
+  
+  .ant-spin-lg .ant-spin-dot {
+    font-size: 150px; 
+  }
+
+  .form{
+    display: flex; 
+    align-items: center;
+  margin-right: 40px;
+  margin-top: 20px;
+}
+
+.container-form {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+}
+
+.form input {
+  height: 30px;
+  width: 300px;
+  border-radius: 10px;
+  border: 1px transparent;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+ .logo-buscar{width: 35px;
+height: 35px;
+margin: auto;
+margin-left: 10px;
+}
+
+

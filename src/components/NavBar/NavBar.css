@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+.navbar{display: flex;
+
+justify-content:space-evenly;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1000;
+
+}
+
+.navbar-li{list-style: none;
+    text-decoration: none;
+
+
+}
+
+    .navbar-ul{list-style: none;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+
+
+}
+
+.navbar-link{list-style: none;
+    color: #fff;
+    font-size: 2.2em;
+    text-decoration: none;
+    font-family: "Rajdhani", sans-serif;
+
+}
+
+.navbar-link:hover,
+.navbar-link.active{
+    color: #c9cf78;
+}
+
+.logo{width: 70px;
+padding: 10px;}
+
+.icono-carrito{width: 70px;
+    padding: 10px;}
+
+
+.cart-total-notification {
+    background-color: #ff6347; /* Tomate */
+    color: #fff; /* Texto blanco */
+    border-radius: 50%; /* Forma circular */
+    padding: 0 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    position: relative;
+    top: -5px; /* Ajuste vertical para alinear con el texto del enlace */
+    margin-left: 5px; /* Espacio entre el texto y el número */
+   }
+   
