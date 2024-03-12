@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import './ProductDetail.css'
 import { doc, getDoc } from 'firebase/firestore'
-import img from '../../assets/imgs/FauxLeatherTrench.jpg'
 import { Spin } from 'antd';
 import { useCounter } from "../../hooks/useCounter";
 import { ToggleButton} from "../../components/Button";
@@ -10,48 +9,48 @@ import { db } from '../../services/db'
 import { CartContext } from '../../context/CartContext'
 
 
-export const ProductDetail = ({id, name, price, valorInicial}) => {
+export const ProductDetail = ({id, valorInicial}) => {
 
   const{contador, aumentarContador, disminuirContador} = useCounter(valorInicial)
-  const [cantidad, setCantidad] = useState(0)
 
-
-  // const agregarCantidad =(cantidad)=>{
-  //   setCantidad(cantidad)
-
-  //   const compra ={
-  //     id, price, name
-  //   }
-
-  //   addProduct(compra, cantidad);
-  // }
-
-  const agregarCantidad = (cantidad) => {
-    setCantidad(cantidad);
-  
-    addProduct(product, cantidad);
-  };
-
+  const { addProduct, inCart } = useContext(CartContext);
 
 const params = useParams()
 const navegate = useNavigate()
 const {productId} = params
 const onBack = ()=> navegate(-1)
-console.log("params:", params);
 console.log("productId:", productId);
 
 const [product, setProduct]= useState(null)
 
-const { addProduct } = useContext(CartContext);
+const handleAddToCart = () => {
+  const compra = {
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    img: product.img
+ };
+  if (!inCart(id)) {
+     addProduct(compra, contador);
+     console.log('(detail)Producto añadido al carrito.');
 
+
+  } else {
+     console.log('(detail)El producto ya está en el carrito.');
+  }
+ };
+ 
 
 
 useEffect(()=>{
-const itemDB = doc(db, 'Products', productId.toString())
-getDoc(itemDB)
+const productDB = doc(db, 'Products', productId)
+getDoc(productDB)
 .then( (product)=>{
   if (product.exists()){
-    setProduct({id: product.id, ...product.data()})
+    const productData = product.data();
+    setProduct({id: product.id, ...productData})
+    console.log(`El productDB de useEffect es ${productDB} y el product es ${JSON.stringify(productData)}   `)
+  
   }
 
 })
@@ -65,11 +64,11 @@ getDoc(itemDB)
       ?
       <div className='card'>
       <div className='card-body'>
-      <img src={img} className='img-product' alt={`Imagen de ${product.name}`} />
+      <img src={product.img} className='img-product' alt={`Imagen de ${product.name}`} />
       </div>
       <div className='card-descript'>
       <h3 className='card-title'>{product.name}</h3>
-      <h3 className='card-title'>$ {product.price}</h3>
+      <h3 className='card-title'>$ {product.price} ARS</h3>
       <div className='buttons-count'>
       <ToggleButton cambiarContador={ ()=>
      disminuirContador(1)}
@@ -82,9 +81,9 @@ getDoc(itemDB)
      />
      </div>
      {
-        cantidad === 0 ? (
+        !inCart(product.id) ? (
           <>
-      <button className='button-cart' onClick={() => agregarCantidad(contador)} >ADD TO CART</button>
+      <button className='button-cart' onClick={() => handleAddToCart()} >ADD TO CART</button>
       <button className='button' onClick={onBack} initial={ 1} >RETURN</button>
       </>
         ):(

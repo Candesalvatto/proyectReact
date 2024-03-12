@@ -1,47 +1,3 @@
-//  import React from 'react';
-// import { ToggleButton} from "./components/Button";
-// import ItemListContainer from "./components/ItemListContainer";
-// import { Contenedor } from "./components/Contenedor";
-// import { TitleContador } from "./components/TitleContador";
-// import { useCounter } from "./hooks/useCounter";
-
-
-// export function App({valorInicial}) {
-
-//  const{contador, aumentarContador, disminuirContador, reestablecerContador} = useCounter(valorInicial)
-
-
-//   return (
-
-
-
-
-
-
-
-// {/* (comonente padre) */}
-// <TitleContador contador={contador}/> 
-//     <h1> Contador</h1>
-//     {/* (componente hijo) */}
-//     <ToggleButton cambiarContador={ ()=>
-//     aumentarContador(1)}
-//     text ={'+1'} 
-//     />
-//         <ToggleButton cambiarContador={ ()=>
-//     reestablecerContador()}
-//     text ={'Reestablecer'} 
-//     />
-//         <ToggleButton cambiarContador={ ()=>
-//     disminuirContador(1)}
-//     text ={'-1'} 
-//     />
-
-// </Contenedor>
-//   );
-// }
-
-// export default App
-
 import React from 'react'
 import banner from './assets/imgs/bannerkhy.jpg'
 import khy1 from './assets/imgs/ky1 (1).jpg'
@@ -51,8 +7,10 @@ import khy4 from './assets/imgs/ky4.jpg'
 import './index.css';
 import about from './assets/imgs/aboutkylei.jpg'
 
+
 export const App = () => {
   return (
+
 
     <div className='homepage'>
     

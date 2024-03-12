@@ -93,25 +93,19 @@ flex-direction: row;
 .banner-container h1{font-family: "Rajdhani", sans-serif;
     font-weight: 400;
     font-size: 5.5em;
-
     margin-bottom: 10px;
 }
 
 .banner-container h2{font-family: "Rajdhani", sans-serif;
         font-weight: 400;
         font-size: 1.5em;
-
         margin-bottom: 10px;}
 
 .banner-container p{font-family: "Rajdhani", sans-serif;
     font-weight: 400;
-
     width: 50%;
     margin-left: auto;
     margin-bottom: 10px;
-
-
-
 }
 
 
@@ -159,4 +153,38 @@ margin: auto;
 margin-left: 10px;
 }
 
+@media only screen and (max-width: 768px) {
 
+  .banner-container h1{font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.banner-container h2{font-family: "Rajdhani", sans-serif;
+        font-weight: 400;
+        font-size: 1em;
+        margin-bottom: 10px;}
+
+.banner-container p{font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+    width: 70%;
+    margin-left: auto;
+    margin-bottom: 10px;
+    font-size: 1em;
+}  
+.form{
+  display: flex; 
+  align-items: center;
+margin-right: 40px;
+margin-top: 70px;
+}
+
+.container-form {
+text-align: right;
+display: flex;
+justify-content: flex-end; 
+align-items: center;
+}
+
+}

@@ -1,10 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
 .checkout-container{width: 50%;
-    height: 450px;
-background-color: #ffff;
+    height: auto;
+margin-right: 60px;
+}
+
+.checkout-container h2{
+    font-family: "Rajdhani", sans-serif;
+    font-size: 3.5em;
+    font-weight: 300;
+    color: #ffff;
+}
+
+.producto-carrito{
+    width: 100%;
+    background-color: #1e1e1e;
+    border: 2px solid #ffff;
+    margin:20px auto;
+
+}
+
+.producto-carrito h4{
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.6em;
+    font-weight: 500;
+    color: #ffff;
+    margin: 0;
+}
+
+.producto-carrito h5{
+    font-family: "Rajdhani", sans-serif;
+    font-size: 2em;
+    font-weight: 500;
+    color: #ffff;
+}
+
+.producto-carrito h6{
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #ffff;
+
+}
+
+.boton-carrito2{
+    border-radius: 50%;
+    border: 1px transparent;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    color: #1e1e1e;
+font-size: 1.5em;
+padding: 0 8px;
+cursor: pointer;
+}
+
+.boton-carrito2:hover{
+    transform: scale(1.1);
+}
+
+.container-img-card{
+    width: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+
+.img-card{width: 180px;}
+
+.container-desc{
+    width: 100%;
+    text-align: center;
+}
+
+.container-desc-card{display: flex;
+flex-direction: row;
+width: 100%;
+justify-content: center;
+align-items: center;}
+
+.container-pay{
+    width: 50%;
+}
+
+.container-all{
+
+    width: 60%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.checkout-button{
+    background-color: #ffff;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    padding: 10px 0;
+    color: #1e1e1e;
+    text-decoration: none;
+
+}
+.container-checkout-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    text-align: center;
+    margin:40px auto;
+}
+
+.checkout-button:hover{background-color: #f5f5f5c3;
+    transition: 1s;
+    font-size: 1.3em;}
+
+ .sub-total{
+display: flex;
+justify-content: space-between;}
+
+.sub-total h5{ color: #ffff;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.2em;
+font-weight: 300;}
+
+.container-pay h4{color: #ffff;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.5em;}
+
+    .container-pay hr{border: 3px solid #ffff;}
+
+    .container-delete{
+        width: 60%;
+        height: 550px;
+        margin: 40px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-delete h2{color: #ffff;
+        font-family: "Rajdhani", sans-serif;
+        font-size: 3.5em;}
+
+.container-orden-compras{
+    width: 50%;
+    margin: 40px auto;
+}
+
+.container-orden-compras h1{        font-family: "Rajdhani", sans-serif;
+    font-size: 3.5em;
+font-weight: 200;
+color: #ffff;}
+
+.container-orden-compras form{display: flex;
+flex-direction: column;
+width: 70%;
 margin: auto;}
 
-.container-orden-compras{background-color: #ffff;
-width: 50%;
-height: 450px;
-background-color: #ffff;
-margin: auto;}
+.container-orden-compras label{font-family: "Rajdhani", sans-serif;
+font-weight: 400;
+font-size: 1.8em;
+color: #ffff;}
+
+.container-orden-compras input{height: 30px;
+border-radius: 20px;
+border: 1px solid #fff;
+margin:10px 0;}
+
+.form-boton{
+    font-family: "Rajdhani", sans-serif;
+    border-radius: 50px;
+    font-size: 1.5em;
+    border: 1px solid transparent;
+    color: #1e1e1e;
+    padding: 10px 20px;
+    background-color: #d4d2d2cc;
+    font-weight: 400;
+}
+
+.form-boton:hover{
+    background-color: #ffff;
+    transition: 1s;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.form-boton.active {
+    background-color: green;
+    color: white;
+}
+
+.container-form-boton{margin: 20px auto;}
+
+.container-all-checkout{    width: 60%;
+    margin: 170px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+
+    @media only screen and (max-width: 768px) {
+
+         .container-delete{
+        width: 80%;
+        height: 550px;
+        margin: 40px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }   
+
+    .container-all{
+        width: 70%;
+        margin: 40px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    
+    }
+    .checkout-container{width: 100%;
+        height: auto;
+        margin: auto;
+
+    }
+
+    .checkout-container h2{
+        text-align: center;
+    }
+
+    .container-pay{width: 100%;
+}
+
+    .container-checkout-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        text-align: center;
+        margin:40px auto;
+    }
+    
+    .checkout-button:hover{background-color: #f5f5f5c3;
+        transition: 1s;
+        font-size: 1.3em;}
+
+        .sub-total h5{ color: #ffff;
+            font-family: "Rajdhani", sans-serif;
+            font-size: 1.8em;
+        font-weight: 300;}
+
+        .container-orden-compras{
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        .container-orden-compras h1{text-align: center;}
+    }

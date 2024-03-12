@@ -1,53 +1,70 @@
 
-import React from 'react'
-import { db } from '../../services/db'
-import { addDoc, collection } from 'firebase/firestore'
-import { useForm } from '../../hooks/useForm'
+import React, { useState, useContext } from 'react'
+import './Shop.css'
+import {db} from '../../services/db'
+import { collection, addDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom'
+import { CartProvider, CartContext } from '../../context/CartContext';
+
+
 
 export const CheckoutForm = () => {
+  const navegate = useNavigate()
+  const { setIsOrderSuccessful } = useContext(CartContext);
+
+  const [name, setName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [adress, setAdress] = useState('')
+  const [city, setCity] = useState('')
+  const [zipCode, setZipCode] = useState('')
 
 
 
-  const [form, handleInputChange] = useForm({
-    name: '',
-    lastName:'',
-    email:'',
-    adress:'',
-    city:'',
-    zipCode:''
-  })
 
-  const handleSubmit = (e)=>{
-e.preventDefault()
 
-const comprasCollection = collection(db, 'OrdenDeCompra')
+  const handleConfirm = (e)=>{
+    e.preventDefault();
+    if (!name || !lastName || !email || !adress || !city || !zipCode) {
+      console.error("Error: Todos los campos son obligatorios.");
+      return;
+    }
+    const userData = {
+      name, lastName, email, adress, city, zipCode
+    }
 
-const newOrdenCompra = {
-    name: form.name,
-    lastName:form.lastName,
-    email:form.email,
-    adress:form.adress,
-    city:form.city,
-    zipCode:form.zipCode
-}
+    addDoc(collection(db, 'OrdenDeCompra'), userData)
+    .then(docRef => {
+      console.log("Orden de compras cargada: ", docRef.id);
+      setName('');
+      setLastName('');
+      setEmail('');
+      setAdress('');
+      setCity('');
+      setZipCode('');
 
-addDoc(comprasCollection, newOrdenCompra)
-.then(({id}) => console.log (id))
-.catch(error => console.log(error))
-
-  }
+      setIsOrderSuccessful(true);
+      navegate(`/shop/checkout/${docRef.id}`)
+    })
+    .catch(error => {
+      console.error("Error al cargar la orden: ", error);
+    });
+};
 
 
   return (
+    <CartProvider>
     <div className='container-orden-compras'>
-        <form onSubmit={handleSubmit}>
+      <h1>PURCHASE ORDER</h1>
+        <form onSubmit={handleConfirm}>
         <label>
             Name
             </label>
             <input 
             type='text'
             name= 'name'
-            onChange={handleInputChange}
+            value={name} 
+            onChange={({target}) => setName(target.value)}
             required
             />
             <label>
@@ -56,7 +73,8 @@ addDoc(comprasCollection, newOrdenCompra)
             <input 
             type='text'
             name= 'lastName'
-            onChange={handleInputChange}
+            value={lastName} 
+            onChange={({target}) => setLastName(target.value)}
             required
             />
 
@@ -64,9 +82,10 @@ addDoc(comprasCollection, newOrdenCompra)
                 Email
             </label>
             <input 
-            type='text'
+            type='email'
             name= 'email'
-            onChange={handleInputChange}
+            value={email} 
+            onChange={({target}) => setEmail(target.value)}
             required
             />
 
@@ -76,7 +95,8 @@ addDoc(comprasCollection, newOrdenCompra)
             <input 
             type='text'
             name= 'adress'
-            onChange={handleInputChange}
+            value={adress} 
+            onChange={({target}) => setAdress(target.value)}
             required
             />
             <label>
@@ -85,7 +105,8 @@ addDoc(comprasCollection, newOrdenCompra)
             <input 
             type='text'
             name= 'city'
-            onChange={handleInputChange}
+            value={city} 
+            onChange={({target}) => setCity(target.value)}
             required
             />
 
@@ -95,14 +116,16 @@ addDoc(comprasCollection, newOrdenCompra)
             <input 
             type='number'
             name= 'zipCode'
-            onChange={handleInputChange}
+            value={zipCode} 
+            onChange={({target}) => setZipCode(target.value)}
             required
             />
-
-
-
+<div className='container-form-boton'>
+                <button type="submit" className="form-boton">Creat Order</button>
+            </div>
         </form>
         
     </div>
+    </CartProvider>
   )
 }

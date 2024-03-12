@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {collection, getDocs, query, where} from 'firebase/firestore'
-import img from '../../assets/imgs/CroppedPufferJacket.jpg'
 import '../Products 001/Products.css'
 import banner from '../../assets/imgs/DROP003.jpg'
 import { Spin } from 'antd';
@@ -28,7 +27,7 @@ export const Products3 = () => {
         .catch((error) => {
           console.error('Error fetching products:', error);
         });
-    }, [db]);
+    }, []);
     
     useEffect(() => {
       setFilteredProducts(
@@ -77,7 +76,7 @@ export const Products3 = () => {
           {filteredProducts.map(product => (
             <li key={product.id} className='product'>
               <Link to={`/products/${product.id}`} className='product-name'>{product.name}</Link>
-              <img src={img} className='img-product' alt={`Imagen de ${product.name}`} />
+              <img src={product.img} className='img-product' alt={`Imagen de ${product.name}`} />
             </li>
           ))}
         </ul>

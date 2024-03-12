@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Products.css'
 import { collection, getDocs, query, where } from 'firebase/firestore'
-import img from '../../assets/imgs/FauxLeatherOpeBacTop.jpg'
 import banner from '../../assets/imgs/DROP001.jpg'
 import { Spin } from 'antd';
 import { useForm } from '../../hooks/useForm'
@@ -81,7 +80,7 @@ export const Products = () => {
           {filteredProducts.map(product => (
             <li key={product.id} className='product'>
               <Link to={`/products/${product.id}`} className='product-name'>{product.name}</Link>
-              <img src={img} className='img-product' alt={`Imagen de ${product.name}`} />
+              <img src={product.img} className='img-product' alt={`Imagen de ${product.name}`} />
             </li>
           ))}
         </ul>

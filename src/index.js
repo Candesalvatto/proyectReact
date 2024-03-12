@@ -11,7 +11,6 @@ import { ProductDetail } from './components/ProductDetail/ProductDetail';
 import {NavBar} from './components/NavBar/NavBar'
 import { Footer } from './components/Footer/Footer';
 import { Shop } from './components/Shop/Shop';
-import { App2 } from './App2';
 import { ProductsAll } from './components/ProducsAll/ProductsAll';
 import { CartProvider } from './context/CartContext';
 import { CheckoutForm } from './components/Shop/CheckoutForm';
@@ -42,10 +41,9 @@ root.render(
   <Route path='/products/004' element={<Products4/>} />
   <Route path='/products/:productId' element={<ProductDetail/>} />
   <Route path='/shop' element={<Shop/>} />
-  <Route path='/shop/checkout' element={<Checkout/>} />
+  <Route path='/shop/checkout/:orderId' element={<Checkout/>} />
   <Route path='/shop/checkoutform' element={<CheckoutForm/>} />
   <Route path='/*' element={<App msg={'ERROR 404 PAGE NOT FOUND'} />} />
-  <Route path='/formulario' element={<App2/>} />
 </Routes>
 <Footer/>
 </CartProvider>

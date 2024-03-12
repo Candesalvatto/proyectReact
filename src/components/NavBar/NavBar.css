@@ -45,13 +45,13 @@ padding: 10px;}
 
 
 .cart-total-notification {
-    background-color: #ff6347; /* Tomate */
+    background-color: red ;/* Tomate */
     color: #fff; /* Texto blanco */
     border-radius: 50%; /* Forma circular */
-    padding: 0 10px; /* Espaciado interno */
+    padding: 0 8px; /* Espaciado interno */
     font-size: 16px; /* Tamaño de fuente */
     position: relative;
-    top: -5px; /* Ajuste vertical para alinear con el texto del enlace */
-    margin-left: 5px; /* Espacio entre el texto y el número */
+    top: -20px; /* Ajuste vertical para alinear con el texto del enlace */
+    margin-left: -5px; /* Espacio entre el texto y el número */
    }
    

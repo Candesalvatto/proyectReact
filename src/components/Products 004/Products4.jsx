@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {collection, getDocs, query, where} from 'firebase/firestore'
-import img from '../../assets/imgs/CroppedRawHemRibTank.jpg'
 import '../Products 001/Products.css'
 import banner from '../../assets/imgs/ALLDROPS.jpg'
 import { Spin } from 'antd';
@@ -23,16 +22,16 @@ export const Products4 = () => {
         .then((products) => {
           const allProducts = products.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
           setProducts(allProducts);
-          setFilteredProducts(allProducts.filter((product) => product.drop === 1));
+          setFilteredProducts(allProducts.filter((product) => product.drop === 4));
         })
         .catch((error) => {
           console.error('Error fetching products:', error);
         });
-    }, [db]);
+    }, []);
     
     useEffect(() => {
       setFilteredProducts(
-        products.filter((product) => product.drop === 1 && product.name.toLowerCase().includes(form.lookFor.toLowerCase()))
+        products.filter((product) => product.drop === 4 && product.name.toLowerCase().includes(form.lookFor.toLowerCase()))
       );
     }, [products, form.lookFor]);
 
@@ -77,7 +76,7 @@ export const Products4 = () => {
           {filteredProducts.map(product => (
             <li key={product.id} className='product'>
               <Link to={`/products/${product.id}`} className='product-name'>{product.name}</Link>
-              <img src={img} className='img-product' alt={`Imagen de ${product.name}`} />
+              <img src={product.img} className='img-product' alt={`Imagen de ${product.name}`} />
             </li>
           ))}
         </ul>
